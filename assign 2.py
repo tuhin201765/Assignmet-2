@@ -1,6 +1,10 @@
 import base64
 import requests
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
+import openai
+openai.api_key = os.getenv('API_KEY')
 
 
 def heading_two(text):
@@ -9,11 +13,6 @@ def heading_two(text):
 
 
 def oai_ans(promt):
-    import os
-    from dotenv import load_dotenv
-    load_dotenv()
-    import openai
-    openai.api_key = os.getenv('API_KEY')
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt=promt,
