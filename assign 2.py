@@ -1,7 +1,6 @@
 import openai
 import base64
 import requests
-
 openai.api_key = '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'
 
 
